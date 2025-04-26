@@ -1,0 +1,89 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\musta\\source\\repos\\LoginEkrani\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4963EE0C-2BE5-4FAC-A432-91E9BCB588AF}|LoginEkrani.csproj|c:\\users\\musta\\source\\repos\\loginekrani\\controllers\\stokkart\u0131controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4963EE0C-2BE5-4FAC-A432-91E9BCB588AF}|LoginEkrani.csproj|solutionrelative:controllers\\stokkart\u0131controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4963EE0C-2BE5-4FAC-A432-91E9BCB588AF}|LoginEkrani.csproj|c:\\users\\musta\\source\\repos\\loginekrani\\controllers\\depocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4963EE0C-2BE5-4FAC-A432-91E9BCB588AF}|LoginEkrani.csproj|solutionrelative:controllers\\depocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4963EE0C-2BE5-4FAC-A432-91E9BCB588AF}|LoginEkrani.csproj|c:\\users\\musta\\source\\repos\\loginekrani\\services\\implementations\\deposervice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4963EE0C-2BE5-4FAC-A432-91E9BCB588AF}|LoginEkrani.csproj|solutionrelative:services\\implementations\\deposervice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4963EE0C-2BE5-4FAC-A432-91E9BCB588AF}|LoginEkrani.csproj|c:\\users\\musta\\source\\repos\\loginekrani\\services\\interfaces\\ideposervice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4963EE0C-2BE5-4FAC-A432-91E9BCB588AF}|LoginEkrani.csproj|solutionrelative:services\\interfaces\\ideposervice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 240,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StokKart\u0131Controller.cs",
+              "DocumentMoniker": "C:\\Users\\musta\\source\\repos\\LoginEkrani\\Controllers\\StokKart\u0131Controller.cs",
+              "RelativeDocumentMoniker": "Controllers\\StokKart\u0131Controller.cs",
+              "ToolTip": "C:\\Users\\musta\\source\\repos\\LoginEkrani\\Controllers\\StokKart\u0131Controller.cs",
+              "RelativeToolTip": "Controllers\\StokKart\u0131Controller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T05:26:33.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DepoController.cs",
+              "DocumentMoniker": "C:\\Users\\musta\\source\\repos\\LoginEkrani\\Controllers\\DepoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DepoController.cs",
+              "ToolTip": "C:\\Users\\musta\\source\\repos\\LoginEkrani\\Controllers\\DepoController.cs",
+              "RelativeToolTip": "Controllers\\DepoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T05:14:21.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DepoService.cs",
+              "DocumentMoniker": "C:\\Users\\musta\\source\\repos\\LoginEkrani\\Services\\Implementations\\DepoService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\DepoService.cs",
+              "ToolTip": "C:\\Users\\musta\\source\\repos\\LoginEkrani\\Services\\Implementations\\DepoService.cs",
+              "RelativeToolTip": "Services\\Implementations\\DepoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T05:18:08.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IDepoService.cs",
+              "DocumentMoniker": "C:\\Users\\musta\\source\\repos\\LoginEkrani\\Services\\Interfaces\\IDepoService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IDepoService.cs",
+              "ToolTip": "C:\\Users\\musta\\source\\repos\\LoginEkrani\\Services\\Interfaces\\IDepoService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IDepoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T05:13:15.491Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

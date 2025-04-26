@@ -1,0 +1,187 @@
+@model LoginEkrani.Models.Admin.MultipleModel
+
+@{
+    ViewData["Title"] = "Yeni Fiş";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Yeni Fiş</h3>
+                </div>
+                <div class="card-body">
+                    <form id="voucherForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Fiş No</label>
+                                    <input type="text" id="fisNo" class="form-control" readonly />
+                                </div>
+                                <div class="form-group">
+                                    <label>Fiş Türü</label>
+                                    <select id="fisTuru" class="form-control">
+                                        <option value="Giriş Fişi">Giriş Fişi</option>
+                                        <option value="Çıkış Fişi">Çıkış Fişi</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Cari</label>
+                                    <select id="cariKodu" class="form-control">
+                                        <option value="">Seçiniz</option>
+                                        @foreach (var cari in Model.CariModel)
+                                        {
+                                            <option value="@cari.kpsft_cariKod">@cari.kpsft_cariAdi</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Depo</label>
+                                    <select id="depoKodu" class="form-control">
+                                        <option value="">Seçiniz</option>
+                                        @foreach (var depo in Model.DepoModel)
+                                        {
+                                            <option value="@depo.kpsft_depoKodu">@depo.kpsft_depoAdi</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Stok Seç</label>
+                                    <select id="stokKodu" class="form-control">
+                                        <option value="">Seçiniz</option>
+                                        @foreach (var stok in Model.StokKartıModel)
+                                        {
+                                            <option value="@stok.kpsft_stokKodu">@stok.kpsft_stokAdi</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Miktar</label>
+                                    <input type="number" id="miktar" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Birim Fiyat</label>
+                                    <input type="number" id="birimFiyat" class="form-control" />
+                                </div>
+                                <button type="button" class="btn btn-primary" onclick="addStock()">Ekle</button>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <table id="stockTable" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Stok Kodu</th>
+                                            <th>Stok Adı</th>
+                                            <th>Miktar</th>
+                                            <th>Birim Fiyat</th>
+                                            <th>Toplam</th>
+                                            <th>İşlem</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-primary" onclick="saveVoucher()">Kaydet</button>
+                    <a asp-action="Index" class="btn btn-default">İptal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            generateFisNo();
+        });
+
+        function generateFisNo() {
+            var prefix = $('#fisTuru').val() === 'Giriş Fişi' ? 'FG' : 'FC';
+            var date = new Date();
+            var year = date.getFullYear().toString().substr(-2);
+            var month = (date.getMonth() + 1).toString().padStart(2, '0');
+            var day = date.getDate().toString().padStart(2, '0');
+            var random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+            $('#fisNo').val(prefix + year + month + day + random);
+        }
+
+        function addStock() {
+            var stokKodu = $('#stokKodu').val();
+            var stokAdi = $('#stokKodu option:selected').text();
+            var miktar = $('#miktar').val();
+            var birimFiyat = $('#birimFiyat').val();
+            var toplam = miktar * birimFiyat;
+
+            if (!stokKodu || !miktar || !birimFiyat) {
+                alert('Lütfen tüm alanları doldurun!');
+                return;
+            }
+
+            var row = '<tr>' +
+                '<td>' + stokKodu + '</td>' +
+                '<td>' + stokAdi + '</td>' +
+                '<td>' + miktar + '</td>' +
+                '<td>' + birimFiyat + '</td>' +
+                '<td>' + toplam + '</td>' +
+                '<td><button type="button" class="btn btn-danger btn-sm" onclick="removeStock(this)">Sil</button></td>' +
+                '</tr>';
+
+            $('#stockTable tbody').append(row);
+            clearStockForm();
+        }
+
+        function removeStock(button) {
+            $(button).closest('tr').remove();
+        }
+
+        function clearStockForm() {
+            $('#stokKodu').val('');
+            $('#miktar').val('');
+            $('#birimFiyat').val('');
+        }
+
+        function saveVoucher() {
+            var stoklar = [];
+            $('#stockTable tbody tr').each(function () {
+                var row = $(this);
+                stoklar.push({
+                    stokKodu: row.find('td:eq(0)').text(),
+                    miktar: parseFloat(row.find('td:eq(2)').text()),
+                    birimFiyat: parseFloat(row.find('td:eq(3)').text())
+                });
+            });
+
+            var data = {
+                fisNo: $('#fisNo').val(),
+                fisTuru: $('#fisTuru').val(),
+                cariKodu: $('#cariKodu').val(),
+                depoKodu: $('#depoKodu').val(),
+                stoklar: stoklar
+            };
+
+            $.ajax({
+                url: '@Url.Action("Create")',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (result) {
+                    if (result.success) {
+                        window.location.href = '@Url.Action("Index")';
+                    } else {
+                        alert('Kaydetme işlemi başarısız oldu!');
+                    }
+                }
+            });
+        }
+    </script>
+} 

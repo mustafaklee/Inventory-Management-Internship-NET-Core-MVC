@@ -1,0 +1,120 @@
+@model LoginEkrani.Models.Admin.MultipleModel
+
+@{
+    ViewData["Title"] = "Yeni Stok Kartı";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Yeni Stok Kartı</h3>
+                </div>
+                <form asp-action="Create" method="post">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="StokKartıModel.kpsft_stokKodu">Stok Kodu</label>
+                                    <input asp-for="StokKartıModel.kpsft_stokKodu" class="form-control" />
+                                    <span asp-validation-for="StokKartıModel.kpsft_stokKodu" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="StokKartıModel.kpsft_stokAdi">Stok Adı</label>
+                                    <input asp-for="StokKartıModel.kpsft_stokAdi" class="form-control" />
+                                    <span asp-validation-for="StokKartıModel.kpsft_stokAdi" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="StokKartıModel.kpsft_birim">Birim</label>
+                                    <select asp-for="StokKartıModel.kpsft_birim" class="form-control">
+                                        <option value="">Seçiniz</option>
+                                        @foreach (var birim in Model.BirimModel)
+                                        {
+                                            <option value="@birim.kpsft_birimKodu">@birim.kpsft_birimAdi</option>
+                                        }
+                                    </select>
+                                    <span asp-validation-for="StokKartıModel.kpsft_birim" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="StokKartıModel.kpsft_grupKodu">Grup Kodu</label>
+                                    <select asp-for="StokKartıModel.kpsft_grupKodu" class="form-control">
+                                        <option value="">Seçiniz</option>
+                                        @foreach (var grup in Model.GrupModel)
+                                        {
+                                            <option value="@grup.kpsft_grupKodu">@grup.kpsft_grupAdi</option>
+                                        }
+                                    </select>
+                                    <span asp-validation-for="StokKartıModel.kpsft_grupKodu" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="StokKartıModel.kpsft_alisKdvOrani">Alış KDV Oranı</label>
+                                    <select asp-for="StokKartıModel.kpsft_alisKdvOrani" class="form-control">
+                                        <option value="">Seçiniz</option>
+                                        @foreach (var kdv in Model.AlisKdvOraniModel)
+                                        {
+                                            <option value="@kdv.kpsft_kdvOrani">@kdv.kpsft_kdvOrani</option>
+                                        }
+                                    </select>
+                                    <span asp-validation-for="StokKartıModel.kpsft_alisKdvOrani" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="StokKartıModel.kpsft_satisKdvOrani">Satış KDV Oranı</label>
+                                    <select asp-for="StokKartıModel.kpsft_satisKdvOrani" class="form-control">
+                                        <option value="">Seçiniz</option>
+                                        @foreach (var kdv in Model.SatisKdvOraniModel)
+                                        {
+                                            <option value="@kdv.kpsft_kdvOrani">@kdv.kpsft_kdvOrani</option>
+                                        }
+                                    </select>
+                                    <span asp-validation-for="StokKartıModel.kpsft_satisKdvOrani" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="StokKartıModel.kpsft_kalite">Kalite</label>
+                                    <select asp-for="StokKartıModel.kpsft_kalite" class="form-control">
+                                        <option value="">Seçiniz</option>
+                                        @foreach (var kalite in Model.KaliteModel)
+                                        {
+                                            <option value="@kalite.kpsft_kalite_no">@kalite.kpsft_kaliteAdi</option>
+                                        }
+                                    </select>
+                                    <span asp-validation-for="StokKartıModel.kpsft_kalite" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="StokKartıModel.kpsft_stokKartTipi">Stok Kart Tipi</label>
+                                    <select asp-for="StokKartıModel.kpsft_stokKartTipi" class="form-control">
+                                        <option value="">Seçiniz</option>
+                                        @foreach (var tip in Model.StokTipiModel)
+                                        {
+                                            <option value="@tip.kpsft_stokTipiKodu">@tip.kpsft_stokTipiAdi</option>
+                                        }
+                                    </select>
+                                    <span asp-validation-for="StokKartıModel.kpsft_stokKartTipi" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="StokKartıModel.kpsft_aciklama">Açıklama</label>
+                                    <textarea asp-for="StokKartıModel.kpsft_aciklama" class="form-control" rows="3"></textarea>
+                                    <span asp-validation-for="StokKartıModel.kpsft_aciklama" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                        <a asp-action="Index" class="btn btn-default">İptal</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

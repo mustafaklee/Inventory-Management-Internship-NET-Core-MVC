@@ -1,0 +1,75 @@
+@model LoginEkrani.Models.Admin.MultipleModel
+
+@{
+    ViewData["Title"] = "Stok Kartı Detayları";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Stok Kartı Detayları</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <dl class="row">
+                                <dt class="col-sm-4">Stok Kodu</dt>
+                                <dd class="col-sm-8">@Model.StokKartıModel.kpsft_stokKodu</dd>
+
+                                <dt class="col-sm-4">Stok Adı</dt>
+                                <dd class="col-sm-8">@Model.StokKartıModel.kpsft_stokAdi</dd>
+
+                                <dt class="col-sm-4">Birim</dt>
+                                <dd class="col-sm-8">@Model.StokKartıModel.birimModel?.kpsft_birimAdi</dd>
+
+                                <dt class="col-sm-4">Grup Kodu</dt>
+                                <dd class="col-sm-8">@Model.StokKartıModel.grupModel?.kpsft_grupAdi</dd>
+
+                                <dt class="col-sm-4">Alış KDV Oranı</dt>
+                                <dd class="col-sm-8">@Model.StokKartıModel.alisKdvOraniModel?.kpsft_kdvOrani</dd>
+
+                                <dt class="col-sm-4">Satış KDV Oranı</dt>
+                                <dd class="col-sm-8">@Model.StokKartıModel.satisKdvOrani?.kpsft_kdvOrani</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6">
+                            <dl class="row">
+                                <dt class="col-sm-4">Kalite</dt>
+                                <dd class="col-sm-8">@Model.StokKartıModel.kaliteModel?.kpsft_kaliteAdi</dd>
+
+                                <dt class="col-sm-4">Stok Kart Tipi</dt>
+                                <dd class="col-sm-8">@Model.StokKartıModel.stokTipi?.kpsft_stokTipiAdi</dd>
+
+                                <dt class="col-sm-4">Gümrük Kodu</dt>
+                                <dd class="col-sm-8">@Model.StokKartıModel.gumrukKoduModel?.kpsft_gumrukKodu</dd>
+
+                                <dt class="col-sm-4">Kritik Miktar</dt>
+                                <dd class="col-sm-8">@Model.StokKartıModel.kpsft_kritikMiktar</dd>
+
+                                <dt class="col-sm-4">Lot Büyüklüğü</dt>
+                                <dd class="col-sm-8">@Model.StokKartıModel.kpsft_lotBuyuklugu</dd>
+
+                                <dt class="col-sm-4">Durum</dt>
+                                <dd class="col-sm-8">@Model.StokKartıModel.durum?.kpsft_durumAdi</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <dl class="row">
+                                <dt class="col-sm-2">Açıklama</dt>
+                                <dd class="col-sm-10">@Model.StokKartıModel.kpsft_aciklama</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a asp-action="Edit" asp-route-id="@Model.StokKartıModel.kpsft_stokKodu" class="btn btn-primary">Düzenle</a>
+                    <a asp-action="Index" class="btn btn-default">Geri Dön</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
