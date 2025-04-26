@@ -44,26 +44,4 @@ Azupir - Inventory Management System (Staj Projesi)
 
 - Frontend: HTML, CSS, JavaScript, Bootstrap
 
-- Veritabanı: SQL Server
-
-**Kurulum ve Kullanım**
-
-- Projeyi GitHub'dan indirin:
-
-```bash
-git clone https://github.com/mustafaklee/Inventory-Management-Internship-NET-Core-MVC.git
-```
-
-- Bağımlılıkları Yükleyin
-
-```bash
-dotnet restore
-```
-
-- Projeyi çalıştırın:
-
-```bash
-dotnet run
-```
-
-- Web tarayıcınızda açarak http://localhost:5000 adresine gidin.
+- Veritabanı: MYSSQL Server
