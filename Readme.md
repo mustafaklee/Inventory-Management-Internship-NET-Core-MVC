@@ -40,8 +40,6 @@ Azupir - Inventory Management System (Staj Projesi)
 
 **Teknolojiler**
 
-- Backend: .NET Core MVC
-
 - Frontend: HTML, CSS, JavaScript, Bootstrap
 
 - Veritabanı: MYSSQL Server
